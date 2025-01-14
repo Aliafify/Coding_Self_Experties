@@ -29,7 +29,6 @@ You can customize which HTML tags and attributes are allowed using the options p
 
 Example with Custom Configuration:
 javascript
-Copy code
 const sanitizeHtml = require('sanitize-html');
 
 const dirtyHtml = `
@@ -56,14 +55,12 @@ Key Configuration Options
 An array of allowed tag names. The sanitizer will only allow these tags and remove any others.
 
 Default: ['b', 'i', 'em', 'strong', 'a']
-javascript
-Copy code
+
 allowedTags: ['a', 'p', 'strong'] // Only allow <a>, <p>, <strong>
 2. allowedAttributes
 An object where each key is a tag name and its value is an array of allowed attribute names for that tag.
 
-javascript
-Copy code
+ 
 allowedAttributes: {
   a: ['href'], // Allow only 'href' attribute for <a> tags
   p: ['style'], // Allow 'style' attribute for <p> tags
@@ -71,8 +68,7 @@ allowedAttributes: {
 3. allowedSchemes
 An array of allowed URL schemes for attributes like href or src. Common schemes are http, https, and mailto.
 
-javascript
-Copy code
+ 
 allowedSchemes: ['http', 'https'] // Allow only http and https URLs
 4. disallowedTagsMode
 Controls how disallowed tags are handled. You can either discard them or escape them.
@@ -80,27 +76,23 @@ Controls how disallowed tags are handled. You can either discard them or escape 
 Options:
 'discard' (default): Removes disallowed tags.
 'escape': Escapes disallowed tags.
-javascript
-Copy code
+ 
 disallowedTagsMode: 'escape' // Escape disallowed tags instead of discarding them
 5. selfClosing
 An array of tags that should be treated as self-closing (e.g., <img />, <br />).
 
-javascript
-Copy code
+ 
 selfClosing: ['img', 'br', 'hr'] // Treat <img>, <br>, <hr> as self-closing tags
 6. enforceHtmlBoundary
 If set to true, ensures that sanitization does not alter HTML boundaries, preserving original structure.
 
-javascript
-Copy code
+ 
 enforceHtmlBoundary: true // Enforce HTML boundary
 Advanced Usage: Custom Filters
 You can define custom tag transformations using the transformTags option. This allows you to modify or validate tags and their attributes.
 
 Example:
-javascript
-Copy code
+ 
 const cleanHtml = sanitizeHtml(dirtyHtml, {
   allowedTags: ['a', 'p'],
   transformTags: {
@@ -119,11 +111,8 @@ HTML Cleaning: Strip out unwanted HTML elements from user-provided content, ensu
 Conclusion
 The sanitize-html package is a powerful tool for ensuring that user-generated HTML content is clean, secure, and free from potentially harmful code. Its customizable configuration makes it flexible enough to suit a variety of use cases, from simple HTML sanitization to more complex scenarios where specific tags and attributes need to be preserved.
 
-go
-Copy code
 
 
-This Markdown document provides a comprehensive overview of the `sanitize-html` package, including installation instructions, examples, and configuration options. You can copy and paste it into a `.md` file for your documentation needs.
 
 
 
